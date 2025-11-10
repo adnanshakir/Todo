@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Registration Section -->
+    <section id="auth-section">
+        <div class="auth-container">
+            <h2>Register</h2>
+        <form id="form">
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Enter your name" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input id="email" type="text" placeholder="Enter your email" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input id="pass" type="password" placeholder="Enter password" />
+                <small class="error"></small>
+            </div>
+
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+        </div>
+    </section>
+
+    <section id="todo-section" class="hidden">
+        <div class="todo-header">
+            <h2>Welcome, <span id="user-name"></span> 👋</h2>
+            <div class="header-actions">
+                <button id="toggle-theme" aria-label="Toggle Theme">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line hidden"></i>
+                </button>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <div class="todo-container">
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Enter a new task..." />
+                <button type="submit" id="taskbtn">Add Task</button>
+            </form>
+            <div class="todo-list-wrapper">
+                <ul id="todo-list">
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
