@@ -1,26 +1,23 @@
-// 🌟 Registration / Auth elements
+// Registration / Auth elements
 const authSection = document.querySelector("#auth-section");
 const form = document.querySelector("#form");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const passInput = document.querySelector("#pass");
 const submitBtn = document.querySelector("#submit-btn");
-const sunIcon = document.querySelector(".icon-sun");
-const moonIcon = document.querySelector(".icon-moon");
 const taskBtn = document.querySelector("#taskbtn");
 
-// ✅ Feedback elements inside form
+//  Feedback elements inside form
 const errorTexts = document.querySelectorAll(".error");
 const passStrength = document.querySelector(".pass-strength");
 
-// 🗒️ To-Do Section elements
+//  To-Do Section elements
 const todoSection = document.querySelector("#todo-section");
 const todoForm = document.querySelector("#todo-form");
 const todoInput = document.querySelector("#todo-input");
 const todoList = document.querySelector("#todo-list");
 
-// ☀️🌙 Theme toggle + Logout
-const toggleThemeBtn = document.querySelector("#toggle-theme");
+// Logout
 const logoutBtn = document.querySelector("#logout-btn");
 const savedUser = JSON.parse(localStorage.getItem("user"));
 
@@ -42,7 +39,6 @@ form.addEventListener("submit", (e) => {
     };
 
     localStorage.setItem("user", JSON.stringify(user));
-    console.log("Saved user:", JSON.parse(localStorage.getItem("user")));
 
     showTodoSection(user);
   }
@@ -58,6 +54,7 @@ function formValidation() {
   // Name check
   if (nameVal === "" || nameVal.length < 3) {
     setError(nameInput, "Name must be at least 3 characters long");
+    isValid = false;
   } else {
     clearError(nameInput);
   }
@@ -65,6 +62,7 @@ function formValidation() {
   // Email check
   if (emailVal === "" || !isValidEmail(emailVal)) {
     setError(emailInput, "Please enter a valid email");
+    isValid = false;
   } else {
     clearError(emailInput);
   }
@@ -77,6 +75,7 @@ function formValidation() {
       passInput,
       "Password must include A-Z, a-z, 0-9, and a special character"
     );
+    isValid = false;
   } else {
     clearError(passInput);
   }
@@ -107,13 +106,6 @@ function showTodoSection(user) {
   userNameDisplay.textContent = user.name || "User";
 }
 
-toggleThemeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-
-  const lightMode = document.body.classList.contains("light");
-  sunIcon.classList.toggle("hidden", lightMode);
-  moonIcon.classList.toggle("hidden", !lightMode);
-});
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -151,6 +143,7 @@ todoList.addEventListener("click", (e) => {
 
 logoutBtn.addEventListener("click", (e)=>{
   localStorage.removeItem("user");
+  todoList.innerHTML = "";
   todoSection.classList.add("hidden");
   authSection.classList.remove("hidden");
   form.reset();

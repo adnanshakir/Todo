@@ -1,25 +1,25 @@
-/* 🌙 Dark Theme Variables */
 :root {
-  --bg: #0a0a0a; /* pitch black background */
-  --card-bg: #161616; /* slightly lighter container bg */
-  --border: #2a2a2a; /* subtle border/outline */
-  --text: #f5f5f5; /* main text color */
-  --text-muted: #b0b0b0; /* secondary text color */
-  --accent: #4a89d7; /* primary blue accent */
-  --accent-hover: #735be9; /* lighter blue hover */
-  --success: #2ecc71; /* green for success states */
-  --error: #e74c3c; /* red for errors or delete */
+  --bg: #0a0a0a;
+  --text: #f5f5f5;
+  --card-bg: #161616;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+  --border: #2a2a2a;
+  --text-muted: #b0b0b0;
+
+  --accent: #4a89d7;
+  --accent-hover: #735be9;
+
+  --success: #2ecc71;
+  --error: #e74c3c;
 }
 
-/* Universal Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* BODY */
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -171,8 +171,8 @@ section.hidden {
 /* Todo card */
 /* Todo container fills remaining height under header */
 .todo-container {
-  flex: 1; /* take remaining vertical space */
-  min-height: 0; /* allow children to shrink inside the flex parent */
+  flex: 1;
+  min-height: 0;
   width: 100%;
   max-width: 800px;
   background: var(--card-bg);
@@ -183,7 +183,7 @@ section.hidden {
   font-family: sans-serif;
   flex-direction: column;
   gap: 1rem;
-  overflow: hidden; /* container itself does NOT scroll */
+  overflow: hidden;
 }
 
 /* Keep form visible, list scrolls separately */
@@ -193,16 +193,14 @@ section.hidden {
   min-height: 0;
   flex-direction: column;
   gap: 0.8rem;
-  flex-shrink: 0; /* prevents form from resizing */
+  flex-shrink: 0;
 }
 
-/* Scrollable list area */
 .todo-list-wrapper {
   flex: 1;
   overflow-y: auto;
 }
 
-/* Optional: scroll styling */
 .todo-list-wrapper::-webkit-scrollbar {
   width: 6px;
 }
