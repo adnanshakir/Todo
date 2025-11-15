@@ -1,6 +1,6 @@
 <h2>📝 To-Do App (Vanilla JavaScript)</h2>
   
-This project is a small JavaScript to-do app where users can register with form validation, manage their personal task list, and have their data stored in local storage for persistence. It includes task adding, marking complete, and deleting functionality. The theme toggle (dark/light mode) feature is planned next to make the interface customizable.
+This project is a small JavaScript to-do app where users can register with form validation, manage their personal task list, and have their data stored in local storage for persistence. It includes task adding, marking complete, and deleting functionality.
 
 <h2>🚀 Features</h2>
 
@@ -11,5 +11,3 @@ Tasks stored in browser local storage
 Add, mark complete, and delete tasks
 
 Responsive and minimal UI
-
-Planned: Dark/Light mode toggle
